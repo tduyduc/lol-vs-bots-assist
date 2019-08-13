@@ -26,7 +26,7 @@ The script automatically creates a Vs. Bots game, accepts the match, attempts to
 |-----|-----|-----|-----|
 |Chỉ di chuyển |Moving only |Automates one (current) game only. Does not create a new game. |Unchecked |
 |Tên tướng |Champion name |Searches for the champion you choose and picks the first champion found. Leave this field blank to select the first available champion in your champion pool. |`Ashe` |
-|Phím kỹ năng |Ability keys |Uses the ability keys you configure. Abilities are leveled up and cast in the exact order entered, by using <kbd>Ctrl</kbd> key (for leveling up) and <kbd>Shift</kbd> key (for casting). Summoner spells and item hot keys can also be used. Note that with default key bindings, number keys from <kbd>1</kbd> to <kbd>4</kbd> causes the character to stop due to <kbd>Ctrl</kbd>+<kbd>1</kbd>–<kbd>4</kbd> character actions. |`rqwe` |
+|Phím kỹ năng |Ability keys |Uses the ability keys you configure. Abilities are leveled up and cast in the exact order entered, by using <kbd>Ctrl</kbd> key (for leveling up) and <kbd>Shift</kbd> key (for casting). Summoner spells and item hot keys can also be used. Note that with default key bindings, number keys from <kbd>1</kbd> to <kbd>5</kbd> cause the character to stop due to <kbd>Ctrl</kbd>+<kbd>1</kbd>–<kbd>5</kbd> character actions. |`rqwe` |
 |Bản đồ nhỏ |Minimap |Check if your in-game minimap is on the left. Uncheck if it's on the right. |Right (unchecked) |
 |Phép bổ trợ |Summoner spells |Uses both summoner spells during the game, by pressing <kbd>Shift</kbd>+<kbd>D</kbd> and <kbd>Shift</kbd>+<kbd>F</kbd>. In case of different key bindings, resort to the _Ability keys_ option. |Checked |
 |Độ khó của máy |Bot difficulty |Self-explanatory. Only effective when you didn't create a game lobby before starting automation. |Trung bình _(Intermediate)_ |
@@ -49,7 +49,7 @@ It is recommended that you have created a Vs. Bots game lobby beforehand, with t
 
 * The script can't always pick the champion that the user selects. You might stumble upon a _"There was a problem selecting your champion. Please try again."_ message.
 * Networking issues might soft-lock the automation, leaving the game stuck in _"Attempting to connect"_.
-* The script requires default key bindings and the in-game minimap scale setting being 100.
+* The script requires most default key bindings and the in-game minimap scale setting being 100.
 * Lane-based movement isn't really smooth and might temporarily stray to another lane.
 * The user-configured item name might be occasionally sent as a chat message due to the use of the <kbd>Enter</kbd> key.
 * If a web-based pop-up dialog spawn at any time during automation, the script might go haywire, endlessly opening web links, hogging system resources. This issue sometimes appear in Garena servers during events; Riot servers are not yet tested.
