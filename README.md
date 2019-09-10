@@ -18,6 +18,16 @@ The author **does not** assume any responsibility when you use this automation s
 
 The script automatically creates a Vs. Bots game, accepts the match, attempts to select the user-configured champion, and plays the game. How it plays is simple: to move randomly or along a user-configured lane, and to use all available abilities, until the game is over.
 
+A demonstration video can be found [here](https://www.youtube.com/watch?v=uWjDw5vED4k).
+
+-----
+
+## Important notes
+
+The automation can be paused at any time by pressing <kbd>Shift</kbd>+<kbd>Pause</kbd>. You'll need to switch to another window during the game to be able to use this hotkey. When you pause, a dialog box is presented to ask if you want to resume the automation.
+
+It is recommended that you have created a Vs. Bots game lobby beforehand, with the game client size being 1024×576.
+
 -----
 
 ## Options
@@ -34,14 +44,6 @@ The script automatically creates a Vs. Bots game, accepts the match, attempts to
 |Khi hoàn thành |Completion action |Select an action to be done when the game limit is reached. Options include _do nothing_, _exit game_, _sleep_, _hibernate_, and _shut down_. |Không làm gì _(Do nothing)_ |
 |Đẩy đường |Pushing lane |Select the lane that the character goes during the game. Options include _disabled_, _top lane_, _middle lane_, _bottom lane_, and _follow teammates_. Disabling this option makes your character move randomly; this helps decrease number of deaths but might incur an AFK warning. Choosing to follow teammates might put yourself in danger if some teammate is AFK. |Đường giữa _(Middle lane)_ |
 |Mua vật phẩm |Purchasing item |Select the item you want to purchase in-game. The script can only buy the exact item but not component items in the recipe. It is recommended that you choose an item that is inexpensive but gives good boosts. Expensive items power up your character very slowly, whereas cheap items fill up your inventory quickly. |`BF` |
-
------
-
-## Important notes
-
-The automation can be paused at any time by pressing <kbd>Shift</kbd>+<kbd>Pause</kbd>. You'll need to switch to another window during the game to be able to use this hotkey. When you pause, a dialog box is presented to ask if you want to resume the automation.
-
-It is recommended that you have created a Vs. Bots game lobby beforehand, with the game client size being 1024×576.
 
 -----
 
