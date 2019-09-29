@@ -1,4 +1,4 @@
-; LOL Vs. Bot Assist © 2017–2019 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
+; LOL Vs. Bots Assist © 2017–2019 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
 #cs
                      GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -676,17 +676,19 @@ Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 #ce
 
+#Region Directives
 #pragma compile(ExecLevel, requireAdministrator)
 #pragma compile(Compression, 9)
 #pragma compile(UPX, False)
-#pragma compile(Icon, League of Legends_100.ico)
+#pragma compile(Icon, 'League of Legends_100.ico')
 #pragma compile(CompanyName, 'T.D. Stoneheart')
-#pragma compile(LegalCopyright, '© 2017–18 T.D. Stoneheart')
+#pragma compile(LegalCopyright, '© 2017–19 T.D. Stoneheart')
 #pragma compile(ProductName, 'LOL Vs. Bots Assist')
 #RequireAdmin
+#EndRegion
 
 #Region Global Variables & Options
-	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 03/09/2018"
+	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 29/09/2019"
 	Global Const $copyright = "LOL Vs. Bot Assist được phân phối dưới giấy phép GNU GPLv3. © 2017–2019 T.D. Stoneheart."
 	Global $size, $champ = "", $ability = "", $maponleft = False, $usespells = False, $movingonly = False, $matches = 0, $limit = 0, _
 			$intermediate = True, $completeaction = 0, $combotext, $side, $clearinglane = 0, $item = ""
@@ -953,7 +955,8 @@ Public License instead of this License.  But first, please read
 					GameBreaking()
 					ControlClick($title, "", "", "main", 1, 430, 286) ; kết nối lại
 					ControlClick($title, "", "", "main", 1, 512, 315) ; thông báo LeaverBuster, gặp lỗi khi khoá tướng
-					ControlClick($title, "", "", "main", 1, 512, 418) ; nút OK khi nhận mảnh chìa khoá, lên cấp, thông thạo
+					; ControlClick($title, "", "", "main", 1, 512, 418) ; nút OK khi nhận mảnh chìa khoá, lên cấp, thông thạo ; cũ!
+					ControlClick($title, "", "", "main", 1, 512, 543) ; nút OK khi nhận mảnh chìa khoá, lên cấp, thông thạo
 					If Not (($limit > 0) And ($matches >= $limit - 1)) Then ; xử lý đối với ván không phải cuối cùng theo giới hạn
 						ControlClick($title, "", "", "main", 1, 509, 543) ; nhận hộp tướng khi lên cấp
 						ControlClick($title, "", "", "main", 1, 559, 626) ; nút "chơi lại"
@@ -1184,7 +1187,8 @@ Func InGameMove() ; di chuyển trong game
 		If $clearinglane = 4 And Not $ticks Then $champindex = Random(2, 5, 1)
 		If IsArray($size) And WinActive($title2) Then
 			If Not SendKeepActive($title2) And Not $movingonly Then ExitLoop
-			MouseClick("main", Round($size[0] / 2), Round($size[1] / 3 * 2), 1, 0)
+			; MouseClick("main", Round($size[0] / 2), Round($size[1] / 3 * 2), 1, 0) ; chiến thắng / thất bại ; cũ!
+			MouseClick("main", Round($size[0] / 2), Round($size[1] * 0.595238), 1, 0) ; chiến thắng / thất bại
 			If Not Mod($ticks, 12) Then
 				Send("{o 2}")
 				BuyItem()
