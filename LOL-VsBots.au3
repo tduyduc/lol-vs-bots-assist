@@ -1,4 +1,4 @@
-; LOL Vs. Bots Assist © 2017–2019 T.D. Stoneheart. Some rights reserved. Source code available under GPLv3 license.
+; LOL Vs. Bots Assist © 2017–2020 T.D. Stoneheart. All rights reserved. Source code available under GPLv3 license.
 #cs
                      GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
