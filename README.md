@@ -30,6 +30,8 @@ The automation can be paused at any time by pressing <kbd>Shift</kbd>+<kbd>Pause
 
 It is recommended that you have created a Vs. Bots game lobby beforehand, with the game client size being 1024×576.
 
+The display scaling setting in your system must be set to 100% (or 96 DPI) for the automation script to work properly.
+
 -----
 
 ## Options
@@ -57,5 +59,6 @@ It is recommended that you have created a Vs. Bots game lobby beforehand, with t
 * Lane-based movement isn't really smooth and might temporarily stray to another lane.
 * The user-configured item name might be occasionally sent as a chat message due to the use of the <kbd>Enter</kbd> key.
 * If a web-based pop-up dialog spawn at any time during automation, the script might go haywire, endlessly opening web links, hogging system resources. This issue sometimes appear in Garena servers during events; Riot servers are not yet tested.
+* The script can only operate on 100% (96 DPI) display scaling. If the system is in another scaling, `PixelGetColor()` won't find the correct pixel position since the actual pixel resolution has changed, and therefore, the script won't work properly.
 
 -----
