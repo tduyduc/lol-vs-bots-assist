@@ -12,6 +12,8 @@ _© 2017–2020 T.D. Stoneheart. All rights reserved. Source code available unde
 
 The author **does not** assume any responsibility when you use this automation script, as it is not related to, endorsed by, or affiliated with Riot Games by any way. Your account might get reported and banned.
 
+Unlicensed derivatives, that is, forks of this project without publicizing source code and/or having the original copyright removed, have been around. The author **does not** assume any responsibility when you use those derivatives; **they might contain unwanted code if you are not able to see their source code**.
+
 -----
 
 ## What this does
