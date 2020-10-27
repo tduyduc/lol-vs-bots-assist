@@ -680,16 +680,16 @@ Public License instead of this License.  But first, please read
 #pragma compile(ExecLevel, requireAdministrator)
 #pragma compile(Compression, 9)
 #pragma compile(UPX, False)
-#pragma compile(Icon, 'League of Legends_100.ico')
 #pragma compile(CompanyName, 'T.D. Stoneheart')
-#pragma compile(LegalCopyright, '© 2017–19 T.D. Stoneheart')
+#pragma compile(LegalCopyright, '© 2017–2020 T.D. Stoneheart')
 #pragma compile(ProductName, 'LOL Vs. Bots Assist')
+; #pragma compile(Icon, 'League of Legends_100.ico')
 #RequireAdmin
 #EndRegion
 
 #Region Global Variables & Options
-	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 29/09/2019"
-	Global Const $copyright = "LOL Vs. Bot Assist được phân phối dưới giấy phép GNU GPLv3. © 2017–2019 T.D. Stoneheart."
+	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 27/10/2020"
+	Global Const $copyright = "LOL Vs. Bot Assist được phân phối dưới giấy phép GNU GPLv3. © 2017–2020 T.D. Stoneheart."
 	Global $size, $champ = "", $ability = "", $maponleft = False, $usespells = False, $movingonly = False, $matches = 0, $limit = 0, _
 			$intermediate = True, $completeaction = 0, $combotext, $side, $clearinglane = 0, $item = ""
 	Global Const $difficulties[] = ["Dễ", "Trung bình"], $actions[] = ["Không làm gì", "Thoát game", "Ngủ", "Ngủ đông", "Tắt máy"], _
@@ -877,17 +877,17 @@ Public License instead of this License.  But first, please read
 		WinActivate($title)
 		Sleep(500)
 		ControlClick($title, "", "", "main", 1, 114, 75) ; đấu với máy
-		ControlClick($title, "", "", "main", 1, 319, 173) ; Summoner's Rift
-		ControlClick($title, "", "", "main", 1, 317, $intermediate ? 429 : 400) ; trung bình / dễ
+		ControlClick($title, "", "", "main", 1, 347, 173) ; Summoner's Rift
+		ControlClick($title, "", "", "main", 1, 347, $intermediate ? 429 : 400) ; trung bình / dễ
 		While Not InChampSelect() ; màn hình chọn tướng?
 			ControlClick($title, "", "", "main", 1, 820, 60) ; loại bỏ pop-up
-			Sleep(100)
+			Sleep(300)
 			ControlClick($title, "", "", "main", 1, 99, 32) ; đấu / sảnh
-			Sleep(100)
+			Sleep(300)
 			ControlClick($title, "", "", "main", 1, 396, 547) ; xác nhận, tạo phòng, tìm trận
-			Sleep(100)
+			Sleep(300)
 			ControlClick($title, "", "", "main", 2, 509, 460) ; chấp nhận trận đấu
-			Sleep(100)
+			Sleep(300)
 		WEnd
 		Do
 			If $limit > 0 Then
@@ -912,23 +912,31 @@ Public License instead of this License.  But first, please read
 				Sleep(1000)
 				While Not InChampSelect()
 					ControlClick($title, "", "", "main", 2, 99, 32) ; đấu / sảnh
-					Sleep(100)
-					ControlClick($title, "", "", "main", 2, 509, 452) ; chấp nhận trận đấu
-					Sleep(100)
-					ControlClick($title, "", "", "main", 2, 509, 480) ; nút chấp nhận / khoá tướng
-					Sleep(100)
-					ControlClick($title, "", "", "main", 1, 512, 316) ; gặp lỗi khi khoá tướng?
 					Sleep(500)
+					ControlClick($title, "", "", "main", 2, 509, 452) ; chấp nhận trận đấu
+					Sleep(500)
+					ControlClick($title, "", "", "main", 2, 509, 480) ; nút chấp nhận / khoá tướng
+					Sleep(500)
+					ControlClick($title, "", "", "main", 1, 512, 316) ; gặp lỗi khi khoá tướng?
+					Sleep(1000)
 					If WinExists($title2) Then ExitLoop 2
 				WEnd
 				ControlClick($title, "", "", "main", 2, 805, 39) ; loại bỏ thông báo che mất thanh tìm kiếm
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 705, 118) ; 6
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 635, 118) ; 5
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 545, 118) ; 4
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 465, 118) ; 3
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 385, 118) ; 2
+				Sleep(10)
 				ControlClick($title, "", "", "main", 1, 305, 118) ; chọn tướng vị trí 1, đề phòng, dự là ngẫu nhiên
+				Sleep(10)
 				ControlClick($title, "", "", "main", 2, 725, 87) ; xoá tìm kiếm
+				Sleep(10)
 				ControlClick($title, "", "", "main", 2, 624, 87) ; tìm kiếm
 				Sleep(10)
 				ControlSend($title, "", "", $champ, 1) ; nhập tên tướng
@@ -942,7 +950,9 @@ Public License instead of this License.  But first, please read
 				Do
 					Sleep(1000)
 					ControlClick($title, "", "", "main", 2, 509, 452) ; nút chấp nhận / khoá tướng
+					Sleep(200)
 					ControlClick($title, "", "", "main", 2, 509, 480) ; nút chấp nhận / khoá tướng
+					Sleep(200)
 					ControlClick($title, "", "", "main", 1, 512, 316) ; gặp lỗi khi khoá tướng?
 					GameBreaking()
 				Until WinExists($title2) Or InChampSelect()
@@ -953,15 +963,22 @@ Public License instead of this License.  But first, please read
 				WinActivate($title)
 				Do
 					GameBreaking()
+					Sleep(100)
 					ControlClick($title, "", "", "main", 1, 430, 286) ; kết nối lại
+					Sleep(100)
 					ControlClick($title, "", "", "main", 1, 512, 315) ; thông báo LeaverBuster, gặp lỗi khi khoá tướng
-					; ControlClick($title, "", "", "main", 1, 512, 418) ; nút OK khi nhận mảnh chìa khoá, lên cấp, thông thạo ; cũ!
+					Sleep(100)
 					ControlClick($title, "", "", "main", 1, 512, 543) ; nút OK khi nhận mảnh chìa khoá, lên cấp, thông thạo
+					Sleep(100)
 					If Not (($limit > 0) And ($matches >= $limit - 1)) Then ; xử lý đối với ván không phải cuối cùng theo giới hạn
 						ControlClick($title, "", "", "main", 1, 509, 543) ; nhận hộp tướng khi lên cấp
+						Sleep(100)
 						ControlClick($title, "", "", "main", 1, 559, 626) ; nút "chơi lại"
+						Sleep(100)
 						ControlClick($title, "", "", "main", 1, 396, 547) ; xác nhận, tạo phòng, tìm trận
+						Sleep(100)
 						ControlClick($title, "", "", "main", 2, 509, 452) ; chấp nhận trận đấu
+						Sleep(100)
 						ControlClick($title, "", "", "main", 2, 509, 480) ; nút khoá tướng
 					EndIf
 					If InChampSelect() Then ExitLoop 2
@@ -1000,7 +1017,7 @@ Func Terminate() ; tạm dừng hoặc thoát
 EndFunc
 
 Func InChampSelect() ; kiểm tra màn hình chọn tướng
-	Return PixelGetColor(259, 31, WinGetHandle($title)) = 0x57431B
+	Return PixelGetColor(259, 31, WinGetHandle($title)) = 0x57431B And PixelGetColor(765, 31, WinGetHandle($title)) = 0x57431B
 EndFunc
 
 Func DifficultyFromGUI()
@@ -1069,8 +1086,12 @@ EndFunc
 Func GameBreaking() ; giải thoát một số lỗi trong game
 	ControlClick("[TITLE:League of Legends; CLASS:#32770", _
 			"You are trying to open the League of Legends game client in an invalid way.", "Button1", "main")
+	ControlClick("[TITLE:Cảnh báo kết nối; CLASS:#32770]", "Bạn đã ngắt kết nối.", "Button1", "main")
+	ControlClick("[TITLE:Network Warning; CLASS:#32770]", "You have disconnected.", "Button1", "main")
 	ControlClick("[TITLE:Kết nối thất bại; CLASS:#32770]", "Không thể kết nối đến máy chủ.", "Button2", "main")
-	ControlClick("[TITLE:Connection failed; CLASS:#32770]", "", "Button2", "main") ; bản tiếng Anh?
+	ControlClick("[TITLE:Failed to Connect; CLASS:#32770]", "Unable to connect to the server.", "Button2", "main")
+	ControlClick("[TITLE:Error; CLASS:#32770]", "irectX", "Button1", "main") ; DirectX
+	ControlClick("[TITLE:Connection failed; CLASS:#32770]", "", "Button2", "main")
 	ControlClick("[TITLE:Woops! Something broke.; CLASS:#32770]", "A problem has caused your program to close.", _
 			"Button2", "main") ; BugSplat, Don't Send
 EndFunc
@@ -1146,40 +1167,12 @@ Func InGameMove() ; di chuyển trong game
 			If Not $movingonly Then ; chờ lính nếu không ở chế độ chỉ di chuyển
 				Sleep(10000)
 				BuyItem()
-				#cs
-				SendKeepActive($title2)
-				Send("{p down}")
-				Sleep(200)
-				Send("{p up}")
-				Sleep(1000)
-				For $i = 1 To 7
-					MouseClick("menu", Round($size[0] / 8 * $i), Round($size[1] / 5), 1, 0)
-				Next
-				Send("{esc}{o 2}")
-				Send("{f1 down}")
-				Sleep(500)
-				Send("{f1 up}")
-				#ce
-				#cs
-				Send("{enter}/mute all{enter}") ; chống ăn chửi :P
-				Sleep(500)
-				Send("{enter}/muteping all{enter}")
-				Sleep(500)
-				#ce
 				Sleep(5000)
 				For $i = 1 To 6
 					WinActivate($title2)
 					MouseClick("menu", Random($size[0] / 5 * 2, $size[0] / 5 * 3, 1), Random($size[1] / 5 * 2, $size[1] / 5 * 3, 1), 1, 0)
 					Sleep(10000)
 				Next
-				#cs
-				If $side = "red" Then
-					MouseClick("menu", Round($size[1] / 4 * 9 / 10), Round(($size[1] * 3 / 4) + ($size[1] / 4 / 10)), 1, 0)
-				Else
-					MouseClick("menu", Round($size[1] / 4 / 10), Round(($size[1] * 3 / 4) + ($size[1] / 4 * 9 / 10)), 1, 0)
-				EndIf
-				Sleep(10000)
-				#ce
 			EndIf
 	EndSwitch
 	While $movingonly Or WinExists($title2)
@@ -1187,7 +1180,6 @@ Func InGameMove() ; di chuyển trong game
 		If $clearinglane = 4 And Not $ticks Then $champindex = Random(2, 5, 1)
 		If IsArray($size) And WinActive($title2) Then
 			If Not SendKeepActive($title2) And Not $movingonly Then ExitLoop
-			; MouseClick("main", Round($size[0] / 2), Round($size[1] / 3 * 2), 1, 0) ; chiến thắng / thất bại ; cũ!
 			MouseClick("main", Round($size[0] / 2), Round($size[1] * 0.595238), 1, 0) ; chiến thắng / thất bại
 			If Not Mod($ticks, 12) Then
 				Send("{o 2}")
@@ -1309,7 +1301,6 @@ Func InGameMove() ; di chuyển trong game
 				For $i = 1 To StringLen($ability)
 					Send("^" & StringMid($ability, $i, 1) & "+" & StringMid($ability, $i, 1)) ; ^Q+Q (Ctrl+Q, Shift+Q)
 				Next
-				; Send($ability)
 				If $usespells Then Send("+d+f")
 			Until 1
 		EndIf
@@ -1321,16 +1312,6 @@ Func InGameMove() ; di chuyển trong game
 				Sleep(500)
 				ControlClick($title, "", "", "main", 1, Round(430 / 1024 * $size[0]), Round(286 / 576 * $size[1])) ; kết nối lại
 				If Not $movingonly Then ExitLoop
-				#cs
-				If $movingonly Then
-					If PixelGetColor(Round(888 / 1024 * $size[0]), Round(44 / 576 * $size[1]), WinGetHandle($title)) = 0x09A646 Then
-						MsgBox(64, "Hoàn thành", "Đã hoàn thành ván chơi!") ; 64: information flag
-						ExitLoop
-					EndIf
-					ControlClick($title, "", "", "main", 1, Round(512 / 1024 * $size[0]), Round(315 / 576 * $size[1]))
-					ControlClick($title, "", "", "main", 1, Round(512 / 1024 * $size[0]), Round(418 / 576 * $size[1]))
-				EndIf
-				#ce
 			EndIf
 		EndIf
 		Sleep(1000)
