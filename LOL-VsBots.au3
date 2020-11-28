@@ -1119,7 +1119,10 @@ Func BuyItem() ; mua vật phẩm theo tên
 	Send("{enter}")
 	Send("{lshift up}{lctrl up}{rshift up}{rctrl up}")
 	Sleep(500)
-	Send("{esc}")
+	Send("{p down}")
+	Sleep(200)
+	Send("{p up}")
+	Sleep(500)
 EndFunc
 
 Func GuessSide() ; đoán đội dựa theo bản đồ nhỏ
