@@ -688,7 +688,7 @@ Public License instead of this License.  But first, please read
 #EndRegion
 
 #Region Global Variables & Options
-	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 27/10/2020"
+	Global Const $about = "LOL Vs. Bots Assist — T.D. Stoneheart, cập nhật ngày 28/11/2020"
 	Global Const $copyright = "LOL Vs. Bot Assist được phân phối dưới giấy phép GNU GPLv3. © 2017–2020 T.D. Stoneheart."
 	Global $size, $champ = "", $ability = "", $maponleft = False, $usespells = False, $movingonly = False, $matches = 0, $limit = 0, _
 			$intermediate = True, $completeaction = 0, $combotext, $side, $clearinglane = 0, $item = ""
