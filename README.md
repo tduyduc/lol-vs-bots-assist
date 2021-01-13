@@ -55,7 +55,7 @@ The display scaling setting in your system must be set to 100% (or 96 DPI) for t
 
 * The script can't always pick the champion that the user selects. You might stumble upon a _"There was a problem selecting your champion. Please try again."_ message.
 * Networking issues might soft-lock the automation, leaving the game stuck in _"Attempting to connect"_.
-* The script requires most default key bindings and the in-game minimap scale setting being 100.
+* The script requires most default key bindings and the in-game minimap scale setting being 33.
 * Lane-based movement isn't really smooth and might temporarily stray to another lane.
 * The user-configured item name might be occasionally sent as a chat message due to the use of the <kbd>Enter</kbd> key.
 * If a web-based pop-up dialog spawn at any time during automation, the script might go haywire, endlessly opening web links, hogging system resources. This issue sometimes appear in Garena servers during events; Riot servers are not yet tested.
