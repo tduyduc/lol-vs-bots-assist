@@ -8,6 +8,8 @@ _© 2017–2020 T.D. Stoneheart. All rights reserved. Source code available unde
 
 ## Disclaimer
 
+**Important: The script is no longer in active development and no longer supported by the author. Either use the software at your own risk or find an alternative.**
+
 ***Use this automation script responsibly and ethically.***
 
 The author **does not** assume any responsibility when you use this automation script, as it is not related to, endorsed by, or affiliated with Riot Games by any way. Your account might get reported and banned.
